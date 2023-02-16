@@ -14,4 +14,57 @@ body {
 
 header {
   text-align: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
 }
+
+header span.yellow-qm {
+  color: #ffd900;
+  font-size: 8rem;
+  margin: 0 2rem;
+}
+.qmOne {
+  transform: rotate(-150deg);
+}
+.qmTwo {
+  transform: rotate(-90deg);
+}
+
+.header-text h1 {
+  font-size: 6rem;
+}
+
+.header-text p {
+  font-size: 2rem;
+}
+
+.yellow-h,
+.yellow-p {
+  color: #ffd900;
+}
+
+/* button */
+a {
+  border: solid 0.125rem #ffd900;
+  padding: 1.5rem 5rem;
+  border-radius: 0.625rem;
+  text-decoration: none;
+  color: #fff;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
+  font-size: 1.5rem;
+  background-color: transparent;
+  transition: all 0.65s linear 200ms;
+}
+
+a:hover {
+  background-color: rgba(255, 217, 0, 0.6);
+}
+
+/* feel free whatever you want:) */
