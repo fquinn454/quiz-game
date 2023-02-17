@@ -13,6 +13,7 @@ body {
 /* header */
 
 header {
+  align-self: center;
   text-align: center;
   color: #fff;
   display: flex;
@@ -68,3 +69,39 @@ a:hover {
 }
 
 /* feel free whatever you want:) */
+.question-container{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top:15%;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  background-color: #00205b;
+  align-items: flex-start;
+  width: 50%;
+  
+}
+
+form p {
+  width: 100%;
+  background-color: rgba(255, 217, 0, 0.6);
+  font-size: 2rem;
+  color: #00205b;
+  border-bottom: solid #00205b 2px;
+  padding:2rem;
+  margin-bottom: 2rem;
+}
+
+label {
+  background-color: rgba(255, 217, 0, 0.6);
+  color: #00205b;
+  width: 100%;
+  padding:1rem;
+}
+
+label:hover {
+  background-color: lightslategray;
+}
