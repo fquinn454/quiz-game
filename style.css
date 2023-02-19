@@ -73,7 +73,7 @@ a:hover {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  margin-top:15%;
+  margin-top:8%;
 }
 
 form{
@@ -82,7 +82,6 @@ form{
   background-color: #00205b;
   align-items: flex-start;
   width: 50%;
-  
 }
 
 form p {
@@ -113,6 +112,22 @@ input {
 
 input:hover {
   background-color: lightslategray;
+}
+
+.pageOne-body{
+  width: 100%;
+}
+
+.score-board{
+  margin-top:1rem;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 12px;
+  color:#00205b;
+  background-color: rgba(248, 247, 56, 0.82);
+  padding: 1.5rem;
 }
 
 /* Screens less than 880px */
