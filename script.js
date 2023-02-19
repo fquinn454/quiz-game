@@ -15,5 +15,9 @@ form.addEventListener("submit", function(event) {
         answer_c.style.backgroundColor = "rgba(235, 88, 88, 0.8)";
         answer_d.style.backgroundColor = "rgba(235, 88, 88, 0.8)";
     }
+    answer_a.disabled = "true";
+    answer_b.disabled = "true";
+    answer_c.disabled = "true";
+    answer_d.disabled = "true";
     event.preventDefault();
   });
