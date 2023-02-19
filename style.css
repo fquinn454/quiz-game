@@ -87,23 +87,30 @@ form{
 
 form p {
   width: 100%;
-  background-color: rgba(255, 217, 0, 0.6);
+  background-color:rgba(255, 217, 0, 0.6);
   font-size: 2rem;
   color: #00205b;
   border-bottom: solid #00205b 2px;
   padding:2rem;
   margin-bottom: 2rem;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonborder;
+  border-image: initial;
+  border-radius: 12px;
 }
 
-label {
+input {
   background-color: rgba(255, 217, 0, 0.6);
   color: #00205b;
   width: 100%;
   padding:1rem;
   font-size: 1.2rem;
+  text-align: left;
+  border-radius: 12px;
 }
 
-label:hover {
+input:hover {
   background-color: lightslategray;
 }
 
@@ -120,7 +127,7 @@ label:hover {
     font-size:1rem;
     padding:1rem;
   }
-  label{
+  input {
     font-size:0.8rem;
   }
 }
