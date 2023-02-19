@@ -7,13 +7,13 @@ const answer_d = document.getElementById("q1-d");
 form.addEventListener("submit", function(event) {
     const buttonClicked = event.submitter.name;
     if (buttonClicked === 'q1-b'){
-        answer_b.style.backgroundColor = "green";
+        answer_b.style.backgroundColor = "rgba(41, 213, 84, 0.8)";
     }
     else{
-        answer_a.style.backgroundColor = "rgba(211, 28, 28, 1)";
-        answer_b.style.backgroundColor = "green";
-        answer_c.style.backgroundColor = "rgba(211, 28, 28, 1)";
-        answer_d.style.backgroundColor = "rgba(211, 28, 28, 1)";
+        answer_a.style.backgroundColor = "rgba(235, 88, 88, 0.8)";
+        answer_b.style.backgroundColor = "rgba(41, 213, 84, 0.8)";
+        answer_c.style.backgroundColor = "rgba(235, 88, 88, 0.8)";
+        answer_d.style.backgroundColor = "rgba(235, 88, 88, 0.8)";
     }
     event.preventDefault();
   });
