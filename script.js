@@ -1,35 +1,142 @@
-const form = document.getElementById("q1");
-const answerA = document.getElementById("q1-a");
-const answerB = document.getElementById("q1-b");
-const answerC = document.getElementById("q1-c");
-const answerD = document.getElementById("q1-d");
-const score = document.getElementById("score");
-const questionNum = document.getElementById("question-num");
-questionNumToPrint = questionNum.getAttribute('value');
-questionNum.innerHTML = "Question "+questionNumToPrint+" of 10"
+// Question class - the quiz will be made up of questions
+class Question {
+    constructor(question, answers, correctAnswer){
+        this.question = question;
+        this.questionAnswers = answers;
+        this.questionCorrectAnswer = correctAnswer;
+        this.questionNumber;
+    }
 
-form.addEventListener("submit", function(event) {
-    const buttonClicked = event.submitter.name;
-    
+    get getQuestion() {
+        return this.question;
+    }
+
+    get answers() {
+        return this.questionAnswers;
+    }
+
+    get correctAnswer() {
+        return this.questionCorrectAnswer
+    }
+
+    get getQuestionNumber() {
+        return this.questionNumber;
+    }
+
+    set setQuestionNumber(num) {
+        this.questionNumber = num;
+    }
+}
+// Write the questions to build the quiz
+const question1 = new Question('What is the captial of France?', ['London', 'Paris', 'Berlin', 'Madrid'], 'answer-b');
+const question2 = new Question('What is the longest river in Europe?', ['Danube', 'Rhine', 'Volga', 'Ural'], 'answer-c' );
+const question3 = new Question('Which country has the longest coastline in the world?', ['Canada', 'Russia', 'China', 'USA'], 'answer-a')
+
+
+// Quiz class - Array of questions
+class Quiz {
+    constructor(questions){
+        this.questions = questions;
+    }
+
+    get getQuestions(){
+        return this.questions;
+    }
+
+    set setQuestions(questions){
+        this.questions = questions;
+    }
+
+    length(){
+        let count = 0;
+        for(let question in this.questions){
+            count++;
+        }
+        return count;
+    }
+}
+
+
+// select the HTML elements that will have information added using script
+function getPageElements(){
+    const form = document.getElementById("question");
+    const questionBox = document.getElementById("question-box");
+    const answerA = document.getElementById("answer-a");
+    const answerB = document.getElementById("answer-b");
+    const answerC = document.getElementById("answer-c");
+    const answerD = document.getElementById("answer-d");
+    let score = document.getElementById("score");
+    let scoreToPrint = parseInt(score.getAttribute('value'));
+    let questionNum = document.getElementById("question-num");
+    let questionNumToPrint = parseInt(questionNum.getAttribute('value'));
+    const questionArrayNum = questionNumToPrint - 1;
+    const question = quiz.questionArrayNum;
+    const pageElements = [form, question, questionBox, answerA, answerB, answerC, answerD, score, scoreToPrint, questionNum, questionNumToPrint, questionArrayNum];
+    return pageElements;
+}
+
+// set the innerHTML for the selected HTML elements
+function setPageElements(pageElements, quiz){
+    const question = quiz.getQuestions[pageElements[11]];
+    pageElements[2].innerHTML = question.question;
+    pageElements[3].setAttribute('value', question.answers[0]);
+    pageElements[4].setAttribute('value', question.answers[1]);
+    pageElements[5].setAttribute('value', question.answers[2]);
+    pageElements[6].setAttribute('value', question.answers[3]);
+    pageElements[9].setAttribute('value', pageElements[10]);
+    pageElements[9].innerHTML = "Question "+pageElements[10]+" of 10"
+    pageElements[7].innerHTML = "Score: "+ pageElements[8];
+};
+
+function resetColors(){
+    pageElements[3].style.backgroundColor = "rgba(248, 247, 56, 0.82)";
+    pageElements[4].style.backgroundColor = "rgba(248, 247, 56, 0.82)";
+    pageElements[5].style.backgroundColor = "rgba(248, 247, 56, 0.82)";
+    pageElements[6].style.backgroundColor = "rgba(248, 247, 56, 0.82)";
+}
+
+let quiz = new Quiz([question1, question2, question3]);
+let pageElements = getPageElements();
+setPageElements(pageElements, quiz);
+
+pageElements[0].addEventListener("submit", function(event) {
+    const question = quiz.getQuestions[pageElements[11]];
+    const buttonClicked = event.submitter.name;  
     // If answer correct
-    if (buttonClicked === 'q1-b'){
-        answerB.style.backgroundColor = "rgba(41, 213, 84, 0.8)";
-        scoreToPrint = parseInt(score.getAttribute('value')) + 1;
-        score.setAttribute('value', scoreToPrint);
-        score.innerHTML = "Score: "+ scoreToPrint;
+    if (buttonClicked === question.correctAnswer){
+        document.getElementById(question.correctAnswer).style.backgroundColor = "rgba(41, 213, 84, 0.8)";
+        pageElements[8]++;
+        pageElements[7].setAttribute('value', pageElements[8]);
+        pageElements[7].innerHTML = "Score: "+ pageElements[8];
     }
     // If answer incorrect
     else{
-        answerA.style.backgroundColor = "rgba(235, 88, 88, 0.8)";
-        answerB.style.backgroundColor = "rgba(41, 213, 84, 0.8)";
-        answerC.style.backgroundColor = "rgba(235, 88, 88, 0.8)";
-        answerD.style.backgroundColor = "rgba(235, 88, 88, 0.8)";
+        for(let i = 3; i < 7; i++){
+            if(pageElements[i].getAttribute('name') === question.correctAnswer){
+                pageElements[i].style.backgroundColor = "rgba(41, 213, 84, 0.8)";
+            }
+            else{
+                pageElements[i].style.backgroundColor = "rgba(235, 88, 88, 0.8)";
+            }
+        }
     }
-    // Disable buttons after answer submitted
-    answerA.disabled = "true";
-    answerB.disabled = "true";
-    answerC.disabled = "true";
-    answerD.disabled = "true";
-    // Prevent page refresh after form submit
     event.preventDefault();
-  });
+    quiz = new Quiz([question1, question2, question3 ]);
+    pageElements[10]++;
+    pageElements[9].setAttribute('value', pageElements[10]);
+    pageElements = getPageElements();
+    if (pageElements[10] <= quiz.getQuestions.length){
+
+        setTimeout(function() {
+            setPageElements(pageElements, quiz);
+            resetColors();
+        }, 1500);
+        
+    }
+    else{
+        setTimeout(function(){
+            window.location = './results.html';
+        }, 1500);
+    }
+
+});

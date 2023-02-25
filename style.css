@@ -130,6 +130,10 @@ input:hover {
   padding: 1.5rem;
 }
 
+#percentage {
+  color:rgba(248, 247, 56, 0.82);
+}
+
 /* Screens less than 880px */
 @media (max-width: 880px) {
   form{
