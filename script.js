@@ -1,61 +1,6 @@
-// Question class - the quiz will be made up of questions
-class Question {
-    constructor(question, answers, correctAnswer){
-        this.question = question;
-        this.questionAnswers = answers;
-        this.questionCorrectAnswer = correctAnswer;
-        this.questionNumber;
-    }
+import quiz from 'Quiz.js';
 
-    get getQuestion() {
-        return this.question;
-    }
-
-    get answers() {
-        return this.questionAnswers;
-    }
-
-    get correctAnswer() {
-        return this.questionCorrectAnswer
-    }
-
-    get getQuestionNumber() {
-        return this.questionNumber;
-    }
-
-    set setQuestionNumber(num) {
-        this.questionNumber = num;
-    }
-}
-// Write the questions to build the quiz
-const question1 = new Question('What is the captial of France?', ['London', 'Paris', 'Berlin', 'Madrid'], 'answer-b');
-const question2 = new Question('What is the longest river in Europe?', ['Danube', 'Rhine', 'Volga', 'Ural'], 'answer-c' );
-const question3 = new Question('Which country has the longest coastline in the world?', ['Canada', 'Russia', 'China', 'USA'], 'answer-a')
-
-
-// Quiz class - Array of questions
-class Quiz {
-    constructor(questions){
-        this.questions = questions;
-    }
-
-    get getQuestions(){
-        return this.questions;
-    }
-
-    set setQuestions(questions){
-        this.questions = questions;
-    }
-
-    length(){
-        let count = 0;
-        for(let question in this.questions){
-            count++;
-        }
-        return count;
-    }
-}
-
+const quiz = quiz;
 
 // select the HTML elements that will have information added using script
 function getPageElements(){
@@ -95,12 +40,11 @@ function resetColors(){
     pageElements[5].style.backgroundColor = "rgba(248, 247, 56, 0.82)";
     pageElements[6].style.backgroundColor = "rgba(248, 247, 56, 0.82)";
 }
-quiz = new Quiz([question1, question2, question3 ]);
+
 let globalScore = 0;
 let results = false;
 let pageElements = getPageElements();
 setPageElements(pageElements, quiz);
-
 
 // Reset onhover light grey background to buttons after red/green change
 pageElements[3].onmouseover = function(){
