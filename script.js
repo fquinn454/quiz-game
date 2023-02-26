@@ -84,7 +84,7 @@ function setPageElements(pageElements, quiz){
     pageElements[5].setAttribute('value', question.answers[2]);
     pageElements[6].setAttribute('value', question.answers[3]);
     pageElements[9].setAttribute('value', pageElements[10]);
-    pageElements[9].innerHTML = "Question "+pageElements[10]+" of 10"
+    pageElements[9].innerHTML = "Question "+pageElements[10]+" of "+quiz.getQuestions.length;
     pageElements[7].innerHTML = "Score: "+ pageElements[8];
 };
 
@@ -95,8 +95,7 @@ function resetColors(){
     pageElements[5].style.backgroundColor = "rgba(248, 247, 56, 0.82)";
     pageElements[6].style.backgroundColor = "rgba(248, 247, 56, 0.82)";
 }
-
-let quiz = new Quiz([question1, question2, question3]);
+quiz = new Quiz([question1, question2, question3 ]);
 let globalScore = 0;
 let results = false;
 let pageElements = getPageElements();
@@ -160,7 +159,7 @@ pageElements[0].addEventListener("submit", function(event) {
         }
     }
     event.preventDefault();
-    quiz = new Quiz([question1, question2, question3 ]);
+    
     pageElements[10]++;
     pageElements[9].setAttribute('value', pageElements[10]);
     pageElements = getPageElements();
