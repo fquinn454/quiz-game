@@ -145,8 +145,8 @@ input[type=submit]:hover {
 #result {
   justify-self: center;
   padding: 10% 5%;
-  color:rgba(248, 247, 56, 0.82);
-  border: rgba(248, 247, 56, 0.82) solid 5px;
+  color:#ffd900;
+  border: #ffd900 solid 5px;
   border-radius: 25px;
   font-size: 1.5rem;
 }
