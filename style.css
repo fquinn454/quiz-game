@@ -48,6 +48,11 @@ header span.yellow-qm {
 }
 
 /* button */
+.play-again a {
+  top: 40%;
+  font-size: 1.2rem;
+}
+
 a {
   border: solid 0.125rem #ffd900;
   padding: 1.5rem 5rem;
@@ -62,6 +67,7 @@ a {
   font-size: 1.5rem;
   background-color: transparent;
   transition: all 0.65s linear 200ms;
+  margin-top: 4%;
 }
 
 a:hover {
@@ -73,7 +79,7 @@ a:hover {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  margin-top:8%;
+  margin-top:6%;
 }
 
 form{
@@ -87,7 +93,7 @@ form{
 form p {
   width: 100%;
   background-color:rgba(248, 247, 56, 0.82);
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #00205b;
   border-bottom: solid #00205b 2px;
   padding:2rem;
@@ -110,7 +116,7 @@ input {
   transition: all 0.2s linear 100ms;
 }
 
-input:hover {
+input[type=submit]:hover {
   background-color: lightslategray;
 }
 
@@ -130,14 +136,51 @@ input:hover {
   padding: 1.5rem;
 }
 
-#percentage {
-  color:rgba(248, 247, 56, 0.82);
+.results-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#result {
+  justify-self: center;
+  padding: 10% 5%;
+  color:#ffd900;
+  border: #ffd900 solid 5px;
+  border-radius: 25px;
+  font-size: 1.5rem;
+}
+
+.lower{
+  font-size: 4rem;
+  padding: 10px;
+  margin-bottom: 3%;
 }
 
 /* Screens less than 880px */
 @media (max-width: 880px) {
   form{
     width:80%;
+  }
+
+  .results-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .lower{
+    font-size: 1.2rem;
+  }
+
+  p#result{
+    font-size: 0.9rem;
+  }
+  
+ a {
+  position: absolute;
+  top: 30%;
+  font-size: 0.9rem;
+  margin-top: 5%;
   }
 }
 
