@@ -1,6 +1,6 @@
 // add score and end of quiz message to results page
 function updateScore(){
-    if(parseInt(sessionStorage.getItem("percentageResult") >= 40)){
+    if(sessionStorage.getItem("percentageResult") >= 40){
         document.getElementById("result").innerHTML = "Congratulations you got: "+ sessionStorage.getItem("percentageResult")+"%";
     }
     else{
