@@ -60,7 +60,7 @@ a {
   text-decoration: none;
   color: #fff;
   position: absolute;
-  top: 65%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 400;
@@ -145,8 +145,8 @@ input[type=submit]:hover {
 #result {
   justify-self: center;
   padding: 10% 5%;
-  color:#ffd900;
-  border: #ffd900 solid 5px;
+  color:white;
+  border: #ffd900 solid 0.125rem;
   border-radius: 25px;
   font-size: 1.5rem;
 }
@@ -178,7 +178,7 @@ input[type=submit]:hover {
   
  a {
   position: absolute;
-  top: 30%;
+  top: 80%;
   font-size: 0.9rem;
   margin-top: 5%;
   }
@@ -186,6 +186,10 @@ input[type=submit]:hover {
 
 /* Screens less than 600px */
 @media (max-width: 600px) {
+  .score-board {
+    font-size: 1rem;
+  }
+
   form p{
     font-size:1rem;
     padding:1rem;
@@ -196,5 +200,9 @@ input[type=submit]:hover {
 
   .qmOne, .qmTwo {
     display: none;
+  }
+
+  .yellow-h {
+    margin-top: 15%;
   }
 }
