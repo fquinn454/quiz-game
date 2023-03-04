@@ -205,4 +205,8 @@ input[type=submit]:hover {
   .yellow-h {
     margin-top: 15%;
   }
+
+.header-text h1{
+    font-size: 4rem;
+  }
 }
