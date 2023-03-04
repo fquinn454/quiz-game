@@ -193,4 +193,8 @@ input[type=submit]:hover {
   input {
     font-size:0.8rem;
   }
+
+  .qmOne, .qmTwo {
+    display: none;
+  }
 }
