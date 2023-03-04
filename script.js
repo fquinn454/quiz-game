@@ -31,8 +31,9 @@ class Question {
 // Write the questions to build the quiz
 const question1 = new Question('What is the captial of France?', ['London', 'Paris', 'Berlin', 'Madrid'], 'answer-b');
 const question2 = new Question('What is the longest river in Europe?', ['Danube', 'Rhine', 'Volga', 'Ural'], 'answer-c' );
-const question3 = new Question('Which country has the longest coastline in the world?', ['Canada', 'Russia', 'China', 'USA'], 'answer-a')
-
+const question3 = new Question('Which country has the longest coastline in the world?', ['Canada', 'India', 'China', 'USA'], 'answer-a')
+const question4 = new Question('Where are the Spanish Steps located?', ['Barcelona', 'Buenos-Aires', 'Auckland', 'Rome'], 'answer-d');
+const question5 = new Question('How many time zones does Russia have?', ['13', '12', '11', '9' ], 'answer-c');
 
 // Quiz class - Array of questions
 class Quiz {
@@ -96,7 +97,7 @@ function resetColors(){
     pageElements[5].style.backgroundColor = "rgba(248, 247, 56, 0.82)";
     pageElements[6].style.backgroundColor = "rgba(248, 247, 56, 0.82)";
 }
-quiz = new Quiz([question1, question2, question3 ]);
+const quiz = new Quiz([question1, question2, question3, question4, question5]);
 let globalScore = 0;
 let results = false;
 let pageElements = getPageElements();
